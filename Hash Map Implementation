@@ -1,0 +1,67 @@
+package HashMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Collections_HashMap {
+    public static void main(String[] args) {
+        Map<String, Integer> mp = new HashMap<>();
+//        Adding values in the Hashmap
+        mp.put("Akash", 28);
+        mp.put("Yash", 27);
+        mp.put("Yashika", 30);
+        mp.put("Shaam", 21);
+        mp.put("Ram", 24);
+
+//        Getting values form the HashMap
+        System.out.println(mp.get("Akash"));
+        System.out.println(mp.get("Rahul"));
+
+//        Put - If key Exists - Update the value
+//        Put - If key do not exists already - Insert the key Value
+        mp.put("Akash",23);
+        mp.put("Mandy",38);
+
+//        remove method
+//        If key exists return the value and Remove it
+//        If key does not exist return null
+        System.out.println(mp.remove("Akash"));
+        System.out.println(mp.remove("Akhil"));
+
+//        Containskey method
+        System.out.println(mp.containsKey("Akash"));
+        System.out.println(mp.containsKey("Yash"));
+
+//        put if absent method
+        System.out.println(mp.putIfAbsent("Akash",23));
+        System.out.println(mp.putIfAbsent("Yash",45));
+
+//        keyset
+        System.out.println(mp.keySet());
+
+//        values
+        System.out.println(mp.values());
+
+//        entryset
+        System.out.println(mp.entrySet());
+
+        for(String key : mp.keySet()){
+            System.out.printf("Age of %s is %d\n",key,mp.get(key));
+        }
+        System.out.println();
+
+        for(Map.Entry<String,Integer> e : mp.entrySet()){
+            System.out.printf("Age of %s is %d\n",e.getKey(),e.getValue());
+        }
+        System.out.println();
+
+        for(var e : mp.entrySet()){
+            System.out.printf("Age of %s is %d\n",e.getKey(),e.getValue());
+        }
+        System.out.println();
+
+
+
+        System.out.println(mp);
+    }
+}
